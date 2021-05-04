@@ -57,15 +57,15 @@ function calcPrice() {
     var inputCoupon = document.getElementById("coupon").value;
     if (couponSconto.includes(inputCoupon) && inputCoupon === "sconto10" ){
         addBurgerPrice -= addBurgerPrice * 0.1;
-        userFinalPrice.innerHTML = addBurgerPrice;
+        userFinalPrice.innerHTML = "$ " + addBurgerPrice;
         
     } else if (couponSconto.includes(inputCoupon) && inputCoupon === "sconto15") {
         addBurgerPrice -= addBurgerPrice * 0.15;
-        userFinalPrice.innerHTML = addBurgerPrice;
+        userFinalPrice.innerHTML = "$ " + addBurgerPrice;
     }else if (couponSconto.includes(inputCoupon) && inputCoupon === "sconto20"){
         addBurgerPrice -= addBurgerPrice * 0.15;
-        userFinalPrice.innerHTML = addBurgerPrice;
+        userFinalPrice.innerHTML = "$ " + addBurgerPrice;
     } else {
-        userFinalPrice.innerHTML = addBurgerPrice;
+        userFinalPrice.innerHTML = "$ " + addBurgerPrice;
     }
 }
