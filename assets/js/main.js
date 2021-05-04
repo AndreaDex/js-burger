@@ -35,5 +35,14 @@ function calcPrice() {
     var checks = document.querySelectorAll("input[type='checkbox']");
     console.log(checks);
     /* Calcolare il totale delle aggiunte tramite controllo checked box */
+    for (let index = 0; index < checks.length; index++) {
+        const element = checks[index];
+        console.log(element);
+        var elPrice = element.getAttribute("data-price");
+        console.log(elPrice);
+        /* if (condition) {
+            
+        } */
+    }
     
 }
