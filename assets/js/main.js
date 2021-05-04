@@ -31,6 +31,7 @@ function calcPrice() {
     var basePrice = 6 ;
     
     var addOnCost = null;
+    console.log(addOnCost);
     /* selezionare checked box */
     var checks = document.querySelectorAll("input[type='checkbox']");
     console.log(checks);
@@ -40,9 +41,31 @@ function calcPrice() {
         console.log(element);
         var elPrice = element.getAttribute("data-price");
         console.log(elPrice);
-        /* if (condition) {
-            
-        } */
+        if (element.checked == true){
+            addOnCost += Number(elPrice)
+         }
+        
     }
-    
+    //Prezzo con aggiunte utente
+    var addBurgerPrice = basePrice + addOnCost;
+    console.log(addBurgerPrice);
+    //Lista coupon sconto
+    var couponSconto = ["sconto10","sconto15","sconto20"]
+    //Verifica coupon, applica sconto, stampa
+    var userFinalPrice = document.getElementById("show_price");
+    console.log(userFinalPrice);
+    var inputCoupon = document.getElementById("coupon").value;
+    if (couponSconto.includes(inputCoupon) && inputCoupon === "sconto10" ){
+        addBurgerPrice -= addBurgerPrice * 0.1;
+        userFinalPrice.innerHTML = addBurgerPrice;
+        
+    } else if (couponSconto.includes(inputCoupon) && inputCoupon === "sconto15") {
+        addBurgerPrice -= addBurgerPrice * 0.15;
+        userFinalPrice.innerHTML = addBurgerPrice;
+    }else if (couponSconto.includes(inputCoupon) && inputCoupon === "sconto20"){
+        addBurgerPrice -= addBurgerPrice * 0.15;
+        userFinalPrice.innerHTML = addBurgerPrice;
+    } else {
+        userFinalPrice.innerHTML = addBurgerPrice;
+    }
 }
